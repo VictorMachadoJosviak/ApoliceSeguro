@@ -1,4 +1,5 @@
 ﻿using Apolice.Domain.Entity;
+using MySql.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,12 +10,14 @@ using System.Threading.Tasks;
 
 namespace Apolice.Infra.Persistence
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class DataContext : DbContext
     {
         public DataContext() : base("Apolice")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
+            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
         }
 
         public IDbSet<Seguro> Seguros { get; set; }

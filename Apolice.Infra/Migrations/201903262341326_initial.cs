@@ -17,8 +17,8 @@ namespace Apolice.Infra.Migrations
                         Cnpj = c.String(maxLength: 19, unicode: false),
                         PlacaVeiculo = c.String(maxLength: 100, unicode: false),
                         ValorPremio = c.Double(nullable: false),
-                        CreatedAt = c.DateTime(nullable: false),
-                        UpdatedAt = c.DateTime(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false, precision: 0),
+                        UpdatedAt = c.DateTime(nullable: false, precision: 0),
                         Deleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)

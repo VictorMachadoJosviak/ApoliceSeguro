@@ -13,7 +13,7 @@ namespace Apolice.Infra.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201903262053117_initial"; }
+            get { return "201903262341326_initial"; }
         }
         
         string IMigrationMetadata.Source
