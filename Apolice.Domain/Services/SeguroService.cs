@@ -75,5 +75,10 @@ namespace Apolice.Domain.Services
             }
             return false;
         }
+
+        public SeguroDTO ObterPorId(Guid id)
+        {
+            return (SeguroDTO)seguroRepository.ObterPorId(id);
+        }
     }
 }

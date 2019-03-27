@@ -11,11 +11,9 @@ namespace Apolice.Domain.Interfaces.Services
     public interface ISeguroService : IServiceBase
     {
         SeguroDTO Cadastrar(SalvarSeguroDTO dto);
-
         SeguroDTO Editar(SeguroDTO dto);
-
+        SeguroDTO ObterPorId(Guid id);
         List<SeguroDTO> Listar();
-
         bool Deletar(Guid id);
     }
 }

@@ -37,6 +37,21 @@ namespace Apolice.API.Controllers
             }
         }
 
+        [Route("obterPorId")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> ObterPorId(Guid? id)
+        {
+            try
+            {
+                var seguro = seguroService.ObterPorId(id.GetValueOrDefault());
+                return await ResponseAsync(seguro, seguroService);
+            }
+            catch (Exception ex)
+            {
+                return await ResponseExceptionAsync(ex);
+            }
+        }
+
         [Route("cadastrar")]
         [HttpPost]
         public async Task<HttpResponseMessage> Cadastrar(SalvarSeguroDTO seguro)
